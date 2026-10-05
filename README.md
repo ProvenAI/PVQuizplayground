@@ -1,36 +1,21 @@
-# PROVEN Plugins Marketplace
+# PROVEN Plugins
 
-GitHub-backed marketplace containing the PROVEN Onboarding plugin.
+GitHub marketplace repository for the PROVEN Onboarding plugin.
 
 ## Repository layout
 
-```text
-.
-├── .agents/
-│   └── plugins/
-│       └── marketplace.json
-└── plugins/
-    └── proven-onboarding/
-        ├── plugin.json
-        ├── README.md
-        └── skills/
-            └── proven-onboarding/
-                └── SKILL.md
-```
+- `.agents/plugins/marketplace.json` — workspace marketplace manifest
+- `plugins/proven-onboarding/plugin.json` — portable Agent Plugins 1.0 manifest
+- `plugins/proven-onboarding/.codex-plugin/plugin.json` — OpenAI/Codex compatibility manifest
+- `plugins/proven-onboarding/skills/proven-onboarding/SKILL.md` — onboarding skill
 
-## Import into the PROVEN ChatGPT workspace
+## Import into ChatGPT workspace
 
-1. Push this repository to GitHub.
-2. In ChatGPT, open Workspace settings → Plugins.
-3. Select Add → Import marketplace.
-4. Use the repository URL only. Leave Path empty if `.agents/plugins/marketplace.json` is at the repository root.
-5. Authorize GitHub and import.
-6. Review the import result and configure the plugin's workspace installation policy.
+1. Push the contents of this directory to the repository root.
+2. In Admin / Workspace settings > Plugins, choose Add > Import marketplace.
+3. Enter the GitHub repository URL only.
+4. Leave Path empty when `.agents/plugins/marketplace.json` is at repository root.
+5. After import or sync, open PROVEN Onboarding in Admin > Plugins and set its Installation policy to Available or Installed for the intended roles.
+6. If set to Available, install it from the Plugins Directory before testing in a new chat.
 
-The marketplace entry includes the existing workspace plugin ID so GitHub can become the management source for the already-created PROVEN Onboarding plugin rather than creating a separate plugin.
-
-If this repository is reused in a different ChatGPT workspace, remove the `pluginId` field from `.agents/plugins/marketplace.json` before importing there.
-
-## Plugin
-
-`proven-onboarding` is a skills-only plugin. It does not include an MCP server and does not claim access to PROVEN's production formulation engine, product catalog, customer database, approved claims service, or checkout systems.
+Repository policy fields are intentionally omitted because workspace GitHub import does not apply installation/authentication policy from the marketplace file.
