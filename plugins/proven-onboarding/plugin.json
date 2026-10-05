@@ -5,24 +5,5 @@
   "description": "Adaptive PROVEN skincare onboarding that supports valid personalized recommendations and builds earned conviction through accurate understanding, verified personalization, credible evidence, and realistic expectations.",
   "author": {
     "name": "PROVEN Group"
-  },
-  "extensions": {
-    "com.openai": {
-      "interface": {
-        "displayName": "PROVEN Onboarding",
-        "shortDescription": "Adaptive skincare onboarding",
-        "longDescription": "Conduct or simulate PROVEN's adaptive skincare onboarding, maintain a structured customer model, produce supported personalized recommendations when verified inputs exist, and create earned conviction that PROVEN can solve the customer's skin problem without overstating certainty or capabilities.",
-        "developerName": "PROVEN Group",
-        "category": "Productivity",
-        "capabilities": [
-          "Interactive"
-        ],
-        "defaultPrompt": [
-          "Onboard me like I am a new PROVEN customer.",
-          "Simulate a PROVEN onboarding conversation for a skeptical skincare customer.",
-          "Review this onboarding flow and identify where personalization or conviction breaks down."
-        ]
-      }
-    }
   }
 }
