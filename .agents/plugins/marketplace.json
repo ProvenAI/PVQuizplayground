@@ -1,0 +1,21 @@
+{
+  "name": "proven-plugins",
+  "interface": {
+    "displayName": "PROVEN Plugins"
+  },
+  "plugins": [
+    {
+      "name": "proven-onboarding",
+      "pluginId": "Plugin_cac60f86bca48191a7b5a085d1d41078",
+      "source": {
+        "source": "local",
+        "path": "./plugins/proven-onboarding"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

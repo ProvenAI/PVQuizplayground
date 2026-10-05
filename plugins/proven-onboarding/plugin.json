@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "proven-onboarding",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Adaptive PROVEN skincare onboarding that supports valid personalized recommendations and builds earned conviction through accurate understanding, verified personalization, credible evidence, and realistic expectations.",
   "author": {
     "name": "PROVEN Group"

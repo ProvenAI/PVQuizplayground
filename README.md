@@ -1,50 +1,36 @@
-# PROVEN Onboarding Plugin
+# PROVEN Plugins Marketplace
 
-A skills-only ChatGPT plugin for PROVEN's adaptive skincare onboarding workflow.
+GitHub-backed marketplace containing the PROVEN Onboarding plugin.
 
-The plugin is designed to do two things at the same time:
-
-1. Understand the customer well enough to support a valid personalized skincare recommendation.
-2. Build earned conviction that PROVEN can solve the customer's skin problem through accurate understanding, relevant personalization, credible evidence, and realistic expectations.
-
-## Repository structure
+## Repository layout
 
 ```text
-proven-onboarding/
-├── README.md
-├── plugin.json
-└── skills/
+.
+├── .agents/
+│   └── plugins/
+│       └── marketplace.json
+└── plugins/
     └── proven-onboarding/
-        └── SKILL.md
+        ├── plugin.json
+        ├── README.md
+        └── skills/
+            └── proven-onboarding/
+                └── SKILL.md
 ```
 
-## What is included
+## Import into the PROVEN ChatGPT workspace
 
-- The plugin manifest and ChatGPT-facing metadata.
-- The complete `proven-onboarding` skill.
-- Consultation logic, structured customer state, handoff guidance, evidence discipline, and safety boundaries.
-- Prototype behavior for cases where PROVEN's production systems are not connected.
+1. Push this repository to GitHub.
+2. In ChatGPT, open Workspace settings → Plugins.
+3. Select Add → Import marketplace.
+4. Use the repository URL only. Leave Path empty if `.agents/plugins/marketplace.json` is at the repository root.
+5. Authorize GitHub and import.
+6. Review the import result and configure the plugin's workspace installation policy.
 
-## What is intentionally not included
+The marketplace entry includes the existing workspace plugin ID so GitHub can become the management source for the already-created PROVEN Onboarding plugin rather than creating a separate plugin.
 
-This repository does **not** contain or simulate PROVEN's proprietary formulation engine, product catalog, customer database, checkout, approved claims database, or safety-rule service.
+If this repository is reused in a different ChatGPT workspace, remove the `pluginId` field from `.agents/plugins/marketplace.json` before importing there.
 
-The skill treats those as external authoritative bindings. Until they are connected, it must not claim that a final formula, SKU, price, availability state, account update, or checkout action has been verified.
+## Plugin
 
-## Test prompts
-
-After installing the plugin, useful smoke tests include:
-
-- `Onboard me like I am a new PROVEN customer.`
-- `Simulate a PROVEN onboarding conversation for a skeptical skincare customer.`
-- `Review this onboarding flow and identify where personalization or conviction breaks down.`
-
-For prototype testing, verify that the agent clearly distinguishes conceptual recommendations from production-backed recommendations.
-
-## Internal-use note
-
-The current skill includes PROVEN strategy context and product-direction assumptions intended for internal use. Review those sections before making this repository public.
-
-## Version
-
-Current plugin version: `0.1.1`.
+`proven-onboarding` is a skills-only plugin. It does not include an MCP server and does not claim access to PROVEN's production formulation engine, product catalog, customer database, approved claims service, or checkout systems.
