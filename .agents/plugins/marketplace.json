@@ -6,7 +6,6 @@
   "plugins": [
     {
       "name": "proven-onboarding",
-      "pluginId": "Plugin_cac60f86bca48191a7b5a085d1d41078",
       "source": {
         "source": "local",
         "path": "./plugins/proven-onboarding"
